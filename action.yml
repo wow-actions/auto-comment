@@ -1,0 +1,102 @@
+name: Auto Comment
+description: Auto comment issues or PRs on events triggered.
+author: bubkoo <bubkoo.wy@gmail.com>
+
+inputs:
+  issuesOpened:
+    description:
+    required: false
+  issuesEdited:
+    description:
+    required: false
+  issuesDeleted:
+    description:
+    required: false
+  issuesTransferred:
+    description:
+    required: false
+  issuesPinned:
+    description:
+    required: false
+  issuesUnpinned:
+    description:
+    required: false
+  issuesClosed:
+    description:
+    required: false
+  issuesReopened:
+    description:
+    required: false
+  issuesAssigned:
+    description:
+    required: false
+  issuesUnassigned:
+    description:
+    required: false
+  issuesLabeled:
+    description:
+    required: false
+  issuesUnlabeled:
+    description:
+    required: false
+  issuesLocked:
+    description:
+    required: false
+  issuesUnlocked:
+    description:
+    required: false
+  issuesMilestoned:
+    description:
+    required: false
+  issuesDemilestoned:
+    description:
+    required: false
+  pullRequestAssigned:
+    description:
+    required: false
+  pullRequestUnassigned:
+    description:
+    required: false
+  pullRequestLabeled:
+    description:
+    required: false
+  pullRequestUnlabeled:
+    description:
+    required: false
+  pullRequestEdited:
+    description:
+    required: false
+  pullRequestOpened:
+    description:
+    required: false
+  pullRequestClosed:
+    description:
+    required: false
+  pullRequestReopened:
+    description:
+    required: false
+  pullRequestSynchronize:
+    description:
+    required: false
+  pullRequestReadyForReview:
+    description:
+    required: false
+  pullRequestLocked:
+    description:
+    required: false
+  pullRequestUnlocked:
+    description:
+    required: false
+  pullRequestReviewRequested:
+    description:
+    required: false
+  pullRequestReviewRequestRemoved:
+    description:
+    required: false
+
+runs:
+  using: node12
+  main: dist/index.js
+branding:
+  icon: send
+  color: green
