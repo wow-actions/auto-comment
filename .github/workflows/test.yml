@@ -10,7 +10,7 @@ jobs:
           yarn
       - name: 📦　Build
         run: |
-          yarn package
+          yarn build
       - uses: ./
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
