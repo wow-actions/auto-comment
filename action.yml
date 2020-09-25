@@ -3,6 +3,9 @@ description: Auto comment issues or PRs on events triggered.
 author: bubkoo <bubkoo.wy@gmail.com>
 
 inputs:
+  GITHUB_TOKEN:
+    description: Your GitHub token for authentication
+    required: true
   issuesOpened:
     description:
     required: false
