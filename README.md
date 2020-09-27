@@ -65,3 +65,7 @@ There are a couple of events that you will need to setup depending on what you w
 - pullRequestUnlocked
 - pullRequestReviewRequested
 - pullRequestReviewRequestRemoved
+
+## License
+
+The scripts and documentation in this project are released under the [MIT License](LICENSE)
