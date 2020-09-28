@@ -62,15 +62,28 @@ export namespace Util {
     ],
   }
 
-  export function getComment() {
+  function getEventName() {
     const context = github.context
     const event = context.eventName
     const action = context.payload.action as string
     const actions = (eventTypes as any)[event] as string[]
 
-    if (actions.includes(action)) {
-      const eventName = camelCase(`${event}.${action}`)
-      return core.getInput(eventName)
+    return actions.includes(action) ? camelCase(`${event}.${action}`) : null
+  }
+
+  export function getComment() {
+    const eventName = getEventName()
+    if (eventName) {
+      return core.getInput(eventName) || core.getInput(`${eventName}Comment`)
+    }
+
+    return null
+  }
+
+  export function getReactions() {
+    const eventName = getEventName()
+    if (eventName) {
+      return core.getInput(`${eventName}Reactions`)
     }
 
     return null

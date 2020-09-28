@@ -1,5 +1,6 @@
 import * as core from '@actions/core'
 import * as github from '@actions/github'
+import { Reaction } from './reaction'
 import { Util } from './util'
 
 export namespace Action {
@@ -10,11 +11,16 @@ export namespace Action {
       const payload = context.payload.issue || context.payload.pull_request
       if (comment && payload) {
         const octokit = Util.getOctokit()
-        await octokit.issues.createComment({
+        const { data } = await octokit.issues.createComment({
           ...context.repo,
           issue_number: payload.number,
           body: Util.pickComment(comment, { author: payload.user.login }),
         })
+
+        const reactions = Util.getReactions()
+        if (reactions) {
+          await Reaction.add(octokit, data.id, reactions)
+        }
       }
     } catch (e) {
       core.error(e)

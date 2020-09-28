@@ -66,6 +66,36 @@ There are a couple of events that you will need to setup depending on what you w
 - pullRequestReviewRequested
 - pullRequestReviewRequestRemoved
 
+And we can also add reactions to comment with `[eventName]Comment` and `[eventName]Reactions` input. Available reactions:
+
+- `+1` 👍
+- `-1` 👎
+- `laugh` 😄
+- `confused` 😕
+- `heart` ❤️
+- `hooray` 🎉
+- `rocket` 🚀
+- `eyes` 👀
+
+```yml
+name: Auto Comment
+on: [issues, pull_request]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: bubkoo/auto-comment@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          issuesOpenedReactions: 'hooray, +1'
+          issuesOpenedComment: >
+            👋 @${author}
+            
+            Thank your for raising a issue. We will try and get back to you as soon as possible.
+            
+            Please make sure you have given us as much context as possible.
+```
+
 ## License
 
 The scripts and documentation in this project are released under the [MIT License](LICENSE)
