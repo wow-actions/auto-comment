@@ -8,7 +8,7 @@ Create a `.github/workflows/auto-comment.yml` file in the repository you want to
 name: Auto Comment
 on: [issues, pull_request]
 jobs:
-  test:
+  run:
     runs-on: ubuntu-latest
     steps:
       - uses: bubkoo/auto-comment@v1
