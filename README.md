@@ -15,7 +15,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           issuesOpened: >
-            👋 @${author}
+            👋 @{{ author }}
             
             Thank your for raising a issue. We will try and get back to you as soon as possible.
             
@@ -23,7 +23,7 @@ jobs:
 
 
           pullRequestOpened: >
-            👋 @${author}
+            👋 @{{ author }}
             
             Thank your for raising your pull request.
             
@@ -89,7 +89,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           issuesOpenedReactions: 'hooray, +1'
           issuesOpenedComment: >
-            👋 @${author}
+            👋 @{{ author }}
             
             Thank your for raising a issue. We will try and get back to you as soon as possible.
             

@@ -1,7 +1,7 @@
 import * as core from '@actions/core'
 import * as github from '@actions/github'
 import random from 'lodash.random'
-import template from 'lodash.template'
+import mustache from 'mustache'
 import camelCase from 'lodash.camelcase'
 
 export namespace Util {
@@ -22,7 +22,7 @@ export namespace Util {
       result = comment[pos] || comment[0]
     }
 
-    return args ? template(result)(args) : result
+    return args ? mustache.render(result, args) : result
   }
 
   const eventTypes = {
