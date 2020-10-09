@@ -14,6 +14,8 @@ inputs:
     required: false
 
   issuesDeleted:
+    required: false
+
   issuesTransferred:
     required: false
 
