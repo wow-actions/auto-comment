@@ -1,7 +1,7 @@
 import * as core from '@actions/core'
 import * as github from '@actions/github'
-import random from 'lodash.random'
 import mustache from 'mustache'
+import random from 'lodash.random'
 import camelCase from 'lodash.camelcase'
 
 export namespace Util {
