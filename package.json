@@ -1,7 +1,7 @@
 {
   "name": "auto-comment",
   "description": "Github action to comment on new issues or PRs.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "dist/index.js",
   "files": [
     "dist",

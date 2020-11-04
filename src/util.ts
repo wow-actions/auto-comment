@@ -66,7 +66,10 @@ export namespace Util {
     const context = github.context
     const event = context.eventName
     const action = context.payload.action as string
-    const actions = (eventTypes as any)[event] as string[]
+    const actions =
+      event === 'pull_request_target'
+        ? eventTypes.pull_request
+        : ((eventTypes as any)[event] as string[])
 
     return actions.includes(action) ? camelCase(`${event}.${action}`) : null
   }
