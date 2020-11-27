@@ -6,6 +6,30 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Usage
 
 Create a `.github/workflows/auto-comment.yml` file in the repository you want to install this action, then add the following to it:
@@ -40,6 +64,9 @@ jobs:
 There are a couple of events that you will need to setup depending on what you want.
 
 ### Available Events
+
+
+
 
 - issuesOpened
 - issuesEdited
