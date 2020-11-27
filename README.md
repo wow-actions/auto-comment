@@ -1,6 +1,11 @@
 > Github action to comment issues or PRs on events triggered.
 
 
+
+
+
+
+
 ## Usage
 
 Create a `.github/workflows/auto-comment.yml` file in the repository you want to install this action, then add the following to it:
@@ -21,6 +26,7 @@ jobs:
             Thank you for raising an issue. We will will investigate into the matter and get back to you as soon as possible.
             
             Please make sure you have given us as much context as possible.
+
 
 
           pullRequestOpened: >
