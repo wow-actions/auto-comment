@@ -14,7 +14,7 @@ jobs:
       - uses: ./
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          issuesOpened: >
+          issuesOpened: |
             👋 @{{ author }}
 
             Thank you for raising an issue. We will investigate into the matter and get back to you as soon as possible.
@@ -22,7 +22,7 @@ jobs:
             Please make sure you have given us as much context as possible.
 
 
-          pullRequestOpened: >
+          pullRequestOpened: |
             👋 @{{ author }}
 
             Thank you for raising your pull request.
