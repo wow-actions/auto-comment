@@ -64,13 +64,12 @@ export namespace Util {
 
   function getEventName() {
     const context = github.context
-    const event = context.eventName
+    const eventName = context.eventName
+    const event = (eventName === 'pull_request_target'
+      ? 'pull_request'
+      : eventName) as 'issues' | 'pull_request'
     const action = context.payload.action as string
-    const actions =
-      event === 'pull_request_target'
-        ? eventTypes.pull_request
-        : ((eventTypes as any)[event] as string[])
-
+    const actions = eventTypes[event]
     return actions.includes(action) ? camelCase(`${event}.${action}`) : null
   }
 
