@@ -14,7 +14,10 @@ export namespace Action {
         const { data } = await octokit.issues.createComment({
           ...context.repo,
           issue_number: payload.number,
-          body: Util.pickComment(comment, { author: payload.user.login }),
+          body: Util.pickComment(comment, {
+            author: payload.user.login,
+            id: payload.number.toString(),
+          }),
         })
 
         const reactions = Util.getReactions()
