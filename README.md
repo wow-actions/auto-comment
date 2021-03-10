@@ -96,6 +96,13 @@ jobs:
             Please make sure you have given us as much context as possible.
 ```
 
+### Available Variables
+
+| Name | Description |
+| --- | --- |
+| {{author}} | The GitHub username of the person who opened the issue / pull request |
+| {{id}} | The numeric id of the issue / pull request |
+
 ## License
 
 The scripts and documentation in this project are released under the [MIT License](LICENSE)
