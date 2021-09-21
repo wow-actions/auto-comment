@@ -1,5 +1,5 @@
 name: Auto Comment
-description: Auto comment issues or PRs on events triggered.
+description: Automatically comment issues or PRs on events triggered.
 author: bubkoo <bubkoo.wy@gmail.com>
 
 inputs:

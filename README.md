@@ -1,4 +1,7 @@
-> Github action to comment issues or PRs on events triggered.
+<h1 align="center">Auto Comment</h1>
+<p align="center">
+  <strong>Automatically comment issues or PRs on events triggered.</strong>
+</p>
 
 ## Usage
 
@@ -11,22 +14,17 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - uses: bubkoo/auto-comment@v1
+      - uses: wow-actions/auto-comment@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          issuesOpened: >
+          issuesOpened: |
             👋 @{{ author }}
-            
             Thank you for raising an issue. We will will investigate into the matter and get back to you as soon as possible.
-            
             Please make sure you have given us as much context as possible.
 
-
-          pullRequestOpened: >
+          pullRequestOpened: |
             👋 @{{ author }}
-            
             Thank you for raising your pull request.
-            
             Please make sure you have followed our contributing guidelines. We will review it as soon as possible
 ```
 
@@ -68,14 +66,16 @@ There are a couple of events that you will need to setup depending on what you w
 
 And we can also add reactions to comment with `[eventName]Comment` and `[eventName]Reactions` input. Available reactions:
 
-- `+1` 👍
-- `-1` 👎
-- `laugh` 😄
-- `confused` 😕
-- `heart` ❤️
-- `hooray` 🎉
-- `rocket` 🚀
-- `eyes` 👀
+| content    | emoji |
+| ---------- | ----- |
+| `+1`       | 👍    |
+| `-1`       | 👎    |
+| `laugh`    | 😄    |
+| `confused` | 😕    |
+| `heart`    | ❤️    |
+| `hooray`   | 🎉    |
+| `rocket`   | 🚀    |
+| `eyes`     | 👀    |
 
 ```yml
 name: Auto Comment
@@ -84,19 +84,17 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - uses: bubkoo/auto-comment@v1
+      - uses: wow-actions/auto-comment@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           issuesOpenedReactions: 'hooray, +1'
-          issuesOpenedComment: >
+          issuesOpenedComment: |
             👋 @{{ author }}
-            
             Thank you for raising an issue. We will investigate into the matter and get back to you as soon as possible.
-            
             Please make sure you have given us as much context as possible.
 ```
 
-### Available Variables
+### Available Placeholders
 
 | Name | Description |
 | --- | --- |
