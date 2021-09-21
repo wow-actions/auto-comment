@@ -6,12 +6,12 @@ import { Util } from './util'
 export namespace Action {
   export async function run() {
     try {
-      const context = github.context
+      const { context } = github
       const comment = Util.getComment()
       const payload = context.payload.issue || context.payload.pull_request
       if (comment && payload) {
         const octokit = Util.getOctokit()
-        const { data } = await octokit.issues.createComment({
+        const { data } = await octokit.rest.issues.createComment({
           ...context.repo,
           issue_number: payload.number,
           body: Util.pickComment(comment, {
@@ -20,7 +20,7 @@ export namespace Action {
           }),
         })
 
-        octokit.reactions.deleteLegacy()
+        octokit.rest.reactions.deleteLegacy()
 
         const reactions = Util.getReactions()
         if (reactions) {
