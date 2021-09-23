@@ -1,4 +1,4 @@
-<h1 align="center">Auto Comment</h1>
+<h1 align="center">💬 Auto Comment</h1>
 
 <p align="center">
   <a href="/wow-actions/auto-comment/blob/master/LICENSE"><img alt="MIT License" src="https://img.shields.io/github/license/wow-actions/auto-comment?style=flat-square"></a>
