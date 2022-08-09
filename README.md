@@ -76,15 +76,15 @@ There are a couple of events that you will need to setup depending on what you w
 And we can also add reactions to comment with `[eventName]Comment` and `[eventName]Reactions` input. Available reactions:
 
 | content    | emoji |
-| ---------- | :-----: |
-| `+1`       | 👍    |
-| `-1`       | 👎    |
-| `laugh`    | 😄    |
-| `confused` | 😕    |
-| `heart`    | ❤️    |
-| `hooray`   | 🎉    |
-| `rocket`   | 🚀    |
-| `eyes`     | 👀    |
+| ---------- | :---: |
+| `+1`       |  👍   |
+| `-1`       |  👎   |
+| `laugh`    |  😄   |
+| `confused` |  😕   |
+| `heart`    |  ❤️   |
+| `hooray`   |  🎉   |
+| `rocket`   |  🚀   |
+| `eyes`     |  👀   |
 
 ```yml
 name: Auto Comment
@@ -107,8 +107,9 @@ jobs:
 
 | Name | Description |
 | --- | --- |
-| {{author}} | The GitHub username of the person who opened the issue/PR |
-| {{id}} | The numeric id of the issue/PR |
+| {{ author }} | The GitHub username of the person who opened the issue/pr |
+| {{ id }} | The numeric id of the issue/pr |
+| {{ payload.* }} | The payload of the [issue/pr](https://docs.github.com/cn/rest/pulls/pulls#get-a-pull-request) |
 
 ## 🔖 License
 

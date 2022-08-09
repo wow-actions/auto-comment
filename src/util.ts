@@ -12,7 +12,7 @@ export namespace Util {
 
   export function pickComment(
     comment: string | string[],
-    args?: { [key: string]: string },
+    args?: { [key: string]: any },
   ) {
     let result: string
     if (typeof comment === 'string' || comment instanceof String) {

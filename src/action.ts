@@ -15,6 +15,7 @@ export namespace Action {
           ...context.repo,
           issue_number: payload.number,
           body: Util.pickComment(comment, {
+            payload,
             author: payload.user.login,
             id: payload.number.toString(),
           }),
