@@ -62,7 +62,7 @@ export namespace Util {
     ],
   }
 
-  function getEventName() {
+  export function getEventName() {
     const { context } = github
     const { eventName } = context
     const event = (
