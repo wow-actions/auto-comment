@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <strong>Automatically comment issues or PRs on events triggered</strong>
+  <strong>Automatically comment issues or PRs on events triggered.</strong>
 </p>
 
 ## 🚀 Usage
