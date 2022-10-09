@@ -52,6 +52,7 @@ export namespace Util {
       'opened',
       'edited',
       'closed',
+      'merged',
       'reopened',
       'synchronize',
       'ready_for_review',
@@ -64,11 +65,18 @@ export namespace Util {
 
   export function getEventName() {
     const { context } = github
-    const { eventName } = context
     const event = (
-      eventName === 'pull_request_target' ? 'pull_request' : eventName
+      context.eventName === 'pull_request_target'
+        ? 'pull_request'
+        : context.eventName
     ) as 'issues' | 'pull_request'
-    const action = context.payload.action as string
+    let action = context.payload.action as string
+    if (event === 'pull_request' && action === 'closed') {
+      const pr = context.payload.pull_request as any
+      if (pr.merged) {
+        action = 'merged'
+      }
+    }
     const actions = eventTypes[event]
     return actions.includes(action) ? camelCase(`${event}.${action}`) : null
   }

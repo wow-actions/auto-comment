@@ -65,6 +65,7 @@ There are a couple of events that you will need to setup depending on what you w
 - pullRequestEdited
 - pullRequestOpened
 - pullRequestClosed
+- pullRequestMerged
 - pullRequestReopened
 - pullRequestSynchronize
 - pullRequestReadyForReview
