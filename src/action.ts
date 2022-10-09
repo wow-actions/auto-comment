@@ -7,6 +7,7 @@ export namespace Action {
   export async function run() {
     try {
       const { context } = github
+      core.info(`action: ${context.payload.action}`)
       core.info(`event: ${Util.getEventName()}`)
       const comment = Util.getComment()
       const payload = context.payload.issue || context.payload.pull_request
