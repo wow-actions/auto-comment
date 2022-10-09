@@ -7,8 +7,11 @@ export namespace Action {
   export async function run() {
     try {
       const { context } = github
-      core.info(`action: ${context.payload.action}`)
+      const { action } = context.payload
+
+      core.info(`action: ${action}`)
       core.info(`event: ${Util.getEventName()}`)
+
       const comment = Util.getComment()
       const payload = context.payload.issue || context.payload.pull_request
       if (comment && payload) {
@@ -24,7 +27,7 @@ export namespace Action {
           }),
         })
 
-        octokit.rest.reactions.deleteLegacy()
+        // octokit.rest.reactions.deleteLegacy()
 
         const reactions = Util.getReactions()
         if (reactions) {

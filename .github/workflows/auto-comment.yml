@@ -1,8 +1,8 @@
 name: Auto Comment
-on: 
+on:
   issues:
   pull_request_target:
-      types: [ closed, opened ]
+    types: [closed, opened]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -17,6 +17,7 @@ jobs:
       - uses: ./
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
           issuesOpened: >
             👋 @{{ author }}
 
@@ -27,6 +28,7 @@ jobs:
 
           pullRequestClosed: >
             👋 @{{ author }} This PR is closed.
+
 
           pullRequestMerged: >
             👋 @{{ author }} This PR is merged.
