@@ -35,7 +35,7 @@ export namespace Reaction {
 
   export async function add(
     octokit: ReturnType<typeof github.getOctokit>,
-    comment_id: number, // eslint-disable-line
+    commentId: number,
     reactions: string | string[],
     owner: string = github.context.repo.owner,
     repo: string = github.context.repo.repo,
@@ -54,8 +54,8 @@ export namespace Reaction {
         return octokit.rest.reactions.createForIssueComment({
           owner,
           repo,
-          comment_id,
           content,
+          comment_id: commentId,
         })
       } catch (e) {
         core.debug(
