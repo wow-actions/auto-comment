@@ -1,7 +1,7 @@
 {
   "name": "auto-comment",
   "description": "Automatically comment issues or PRs on events triggered",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "main": "dist/index.js",
   "files": [
     "dist",
