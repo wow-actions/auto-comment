@@ -12,6 +12,22 @@ export namespace Action {
       core.info(`action: ${action}`)
       core.info(`event: ${Util.getEventName()}`)
 
+      const startDate = Util.getStartDate()
+      const endDate = Util.getEndDate()
+      if (startDate || endDate) {
+        core.info(`StartDate: ${startDate} - EndDate ${endDate}`)
+        const now = new Date()
+        core.info(`Today: ${now}`)
+
+        if (!(startDate && startDate < now)) {
+          throw new Error('Running before StartDate - not executing')
+        }
+        if (!(endDate && endDate > now)) {
+          throw new Error('Running after EndDate - not executing')
+        }
+        core.info('Running inside of configured time - executing')
+      }
+
       const comment = Util.getComment()
       const payload = context.payload.issue || context.payload.pull_request
       if (comment && payload) {
