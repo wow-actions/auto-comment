@@ -98,4 +98,12 @@ export namespace Util {
 
     return null
   }
+
+  export function getStartDate() {
+    return new Date(Date.parse(core.getInput('startDate')))
+  }
+
+  export function getEndDate() {
+    return new Date(Date.parse(core.getInput('endDate')))
+  }
 }

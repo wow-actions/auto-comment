@@ -280,6 +280,12 @@ inputs:
   pullRequestReviewRequestRemovedReactions:
     required: false
 
+  startDate:
+    required: false
+
+  endDate:
+    required: false
+
 runs:
   using: node16
   main: dist/index.js

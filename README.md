@@ -112,6 +112,29 @@ jobs:
 | {{ id }} | The numeric id of the issue/pr |
 | {{ payload.* }} | The payload of the [issue/pr](https://docs.github.com/cn/rest/pulls/pulls#get-a-pull-request) |
 
+### Running within a specific date window
+
+You can configure the action to only run after a specific date, before a specific date, or between a start and end date.
+
+```yml
+name: Auto Comment
+on: [issues, pull_request]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wow-actions/auto-comment@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          startDate: 2022-12-24
+          endDate: 2023-01-02
+          issuesOpenedComment: |
+            👋 @{{ author }}
+            Thank you for raising an issue.
+            We are on a company-wide holiday, and will only be investigating SEV-1 issues between Christmas and New Years.
+            If you have a SEV-1 issue, you can raise it by filing a "Production Outage" issue.
+```
+
 ## 🔖 License
 
 The scripts and documentation in this project are released under the [MIT License](LICENSE)
